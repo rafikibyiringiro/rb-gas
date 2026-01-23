@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RB-GAS | Gas Cooker Exchange & Delivery</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f4f4;
+      color: #222;
+    }
+    header {
+      background: linear-gradient(135deg, #ff3c00, #ffb300);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 42px;
+      margin: 0;
+    }
+    header p {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .services, .sizes, .accessories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .card h3 {
+      color: #ff3c00;
+    }
+    .cta {
+      background: #ff3c00;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .cta a {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 14px 28px;
+      background: #fff;
+      color: #ff3c00;
+      font-weight: bold;
+      border-radius: 30px;
+      text-decoration: none;
+    }
+    footer {
+      background: #222;
+      color: #bbb;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+    form {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    form input, form select, form textarea, form button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+    }
+    form button {
+      background: #ff3c00;
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>RB-GAS</h1>
+  <p>Gas Cooker Exchange • Free Delivery • Good Price<br><strong>Call / WhatsApp: +250 793 415 812</strong></p>
+</header>
+
+<section>
+  <h2 style="text-align:center">Our Services</h2>
+  <div class="services">
+    <div class="card"><h3>Gas Cylinder Exchange</h3><p>Bring empty cylinder, get a full one instantly.</p></div>
+    <div class="card"><h3>Free Delivery</h3><p>We deliver gas to your home at no extra cost.</p></div>
+    <div class="card"><h3>Good Prices</h3><p>Affordable and reliable gas for every home.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2 style="text-align:center">Available Gas Sizes</h2>
+  <div class="sizes">
+    <div class="card">6 KG</div>
+    <div class="card">12 KG</div>
+    <div class="card">15 KG</div>
+    <div class="card">20 KG</div>
+    <div class="card">38 KG</div>
+  </div>
+</section>
+
+<section>
+  <h2 style="text-align:center">Gas Accessories</h2>
+  <div class="accessories">
+    <div class="card">Regulators</div>
+    <div class="card">Gas Pipes</div>
+    <div class="card">Valves</div>
+    <div class="card">Cookers & Parts</div>
+  </div>
+</section>
+
+<section>
+  <h2 style="text-align:center">Make an Order</h2>
+  <form onsubmit="sendOrder(event)">
+    <input type="text" id="name" placeholder="Your Name" required />
+    <input type="tel" id="phone" placeholder="Phone Number" required />
+    <select id="size" required>
+      <option value="">Select Gas Size</option>
+      <option>6 KG</option>
+      <option>12 KG</option>
+      <option>15 KG</option>
+      <option>20 KG</option>
+      <option>38 KG</option>
+    </select>
+    <textarea id="address" placeholder="Delivery Address" required></textarea>
+    <button type="submit">Order Now</button>
+  </form>
+</section>
+
+<div class="cta">
+  <h2>Fast • Safe • Reliable Gas Delivery</h2>
+  <a href="https://wa.me/250793415812" target="_blank">Order via WhatsApp</a>
+</div>
+
+<footer>
+  <p>© 2026 RB-GAS | All Rights Reserved</p>
+</footer>
+
+<script>
+  function sendOrder(e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const size = document.getElementById('size').value;
+    const address = document.getElementById('address').value;
+
+    const message = `RB-GAS Order%0AName: ${name}%0APhone: ${phone}%0AGas Size: ${size}%0AAddress: ${address}`;
+    window.open(`https://wa.me/250793415812?text=${message}`, '_blank');
+  }
+</script>
+
+</body>
+</html>
